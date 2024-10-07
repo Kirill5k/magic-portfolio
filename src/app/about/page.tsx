@@ -223,32 +223,18 @@ export default function About() {
                               variant="heading-strong-l">
                             {skill.title}
                           </Text>
-                          <Text
-                              variant="body-default-m"
-                              onBackground="neutral-weak">
-                            {skill.description}
-                          </Text>
-                          {skill.images.length > 0 && (
-                              <Flex
-                                  fillWidth paddingTop="m" gap="12"
-                                  wrap>
-                                {skill.images.map((image, index) => (
-                                    <Flex
-                                        key={index}
-                                        border="neutral-medium"
-                                        borderStyle="solid-1"
-                                        radius="m"
-                                        minWidth={image.width} height={image.height}>
-                                      <SmartImage
-                                          enlarge
-                                          radius="m"
-                                          sizes={image.width.toString()}
-                                          alt={image.alt}
-                                          src={image.src}/>
-                                    </Flex>
-                                ))}
-                              </Flex>
-                          )}
+                          <Flex
+                              as="ul"
+                              direction="column" gap="0">
+                            {skill.items.map((item, index) => (
+                                <Text
+                                    as="li"
+                                    variant="body-default-m"
+                                    key={`${item.name}-${index}`}>
+                                  <strong>{item.name}</strong>{' - '}{item.description}
+                                </Text>
+                            ))}
+                          </Flex>
                         </Flex>
                     ))}
                   </Flex>
