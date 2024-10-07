@@ -26,11 +26,6 @@ const social = [
         link: 'https://www.linkedin.com/company/once-ui/',
     },
     {
-        name: 'X',
-        icon: 'x',
-        link: '',
-    },
-    {
         name: 'Email',
         icon: 'email',
         link: 'mailto:example@gmail.com',
@@ -151,10 +146,10 @@ const about = {
 }
 
 const work = {
-    label: 'Work',
+    label: 'Projects',
     title: 'My projects',
     description: `Design and dev projects by ${person.name}`
-    // Create new project pages by adding a new .mdx file to app/blog/posts
+    // Create new project pages by adding a new .mdx file to app/work/projects
     // All projects will be listed on the /home and /work routes
 }
 
