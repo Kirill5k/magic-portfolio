@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { Flex, ToggleButton } from "@/once-ui/components"
 import styles from '@/app/components/Header.module.scss'
 
-import { routes, display } from '@/app/resources'
-import { person, home, about, work } from '@/app/resources'
+import { routes } from '@/app/resources'
+import { home, about, work } from '@/app/resources'
 
 export const Header = () => {
     const pathname = usePathname() ?? '';
@@ -18,15 +18,6 @@ export const Header = () => {
             zIndex={9}
             fillWidth padding="8"
             justifyContent="center">
-            <Flex
-                hide="s"
-                paddingLeft="12" fillWidth
-                alignItems="center"
-                textVariant="body-default-s">
-                { display.location && (
-                    <>{person.location}</>
-                )}
-            </Flex>
             <Flex
                 background="surface" border="neutral-medium" borderStyle="solid-1" radius="m-4" shadow="l"
                 padding="4"
@@ -59,12 +50,6 @@ export const Header = () => {
                         </ToggleButton>
                     )}
                 </Flex>
-            </Flex>
-            <Flex
-                hide="s"
-                paddingRight="12" fillWidth
-                justifyContent="flex-end" alignItems="center"
-                textVariant="body-default-s">
             </Flex>
         </Flex>
     )
